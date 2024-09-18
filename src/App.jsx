@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import styled, { createGlobalStyle, ThemeProvider, keyframes } from 'styled-components';
-import '@fontsource/press-start-2p'; // Ensures the font is loaded across all devices
+import '@fontsource/press-start-2p'; 
 import logo from './assets/logo.png';
-import lightBackground from './assets/light1.jpg'; // Import your light mode background image
-import darkBackground from './assets/dark.png';   // Import your dark mode background image
+import image1 from './assets/1.png';  
+import image2 from './assets/2.png';  
+import image3 from './assets/3.png';  
+import lightBackground from './assets/light1.jpg';
+import darkBackground from './assets/dark.png';  
 
-// Keyframes for blur and opacity transition
+
 const fadeIn = keyframes`
   0% {
     opacity: 0;
@@ -25,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: ${props => props.theme.backgroundColor};
     background-image: url(${props => props.theme.backgroundImage});
     background-size: cover;
@@ -40,8 +43,17 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Wrapper = styled.div`
-  text-align: center;
-  animation: ${fadeIn} 0.8s ease; /* Apply blur animation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: ${fadeIn} 0.8s ease;
+  padding: 20px;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const Logo = styled.img`
@@ -50,11 +62,52 @@ const Logo = styled.img`
   left: 1vw;
   width: 10vw;
   max-width: 120px;
+
+  @media (max-width: 768px) {
+    width: 15vw;
+    max-width: 80px;
+  }
 `;
 
 const StyledTitle = styled.h1`
   font-size: clamp(1.5rem, 4vw, 3rem);
   margin-bottom: 2rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+`;
+
+const StyledImage = styled.img`
+  width: 1300px;
+  height: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -63,19 +116,32 @@ const StyledButton = styled.button`
   background-color: ${props => props.theme.buttonColor};
   color: ${props => props.theme.buttonTextColor};
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
-  margin-bottom: 1rem;
+  width: clamp(150px, 20vw, 200px);
   transition: opacity 0.5s ease;
 
   &:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 768px) {
+    width: 70vw;
+  }
 `;
 
-const StyledDownloadButton = styled(StyledButton)`
-  background-color: ${props => props.theme.downloadButtonColor};
-  color: ${props => props.theme.downloadButtonTextColor};
+const FooterLink = styled.a`
+  color: ${props => props.theme.textColor};
+  text-decoration: none;
+  margin: 5px 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const lightTheme = {
@@ -83,8 +149,6 @@ const lightTheme = {
   textColor: '#000',
   buttonColor: '#000',
   buttonTextColor: '#fff',
-  downloadButtonColor: '#000',
-  downloadButtonTextColor: '#fff',
   backgroundImage: lightBackground, 
 };
 
@@ -93,8 +157,6 @@ const darkTheme = {
   textColor: '#fff',
   buttonColor: '#fff',
   buttonTextColor: '#000',
-  downloadButtonColor: '#fff',
-  downloadButtonTextColor: '#000',
   backgroundImage: darkBackground, 
 };
 
@@ -106,72 +168,80 @@ function App() {
   };
 
   const handleDownloadClick1 = () => {
-    window.location.href = 'https://drive.google.com/file/d/10JZF62R6DLJ0UfXuFdZldfuyKBy5yyZf/view?usp=sharing'; // Replace with the desired URL
+    window.location.href = 'https://drive.google.com/file/d/10JZF62R6DLJ0UfXuFdZldfuyKBy5yyZf/view?usp=sharing'; 
   };
   const handleDownloadClick2 = () => {
-    window.location.href = 'https://github.com/ayaanoski/8-bit-browser'; // Replace with the desired URL
+    window.location.href = 'https://github.com/ayaanoski/8-bit-browser'; 
   };
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <Wrapper> {/* Apply animation to the wrapper */}
+      <Wrapper>
         <Logo src={logo} alt="Logo" />
-        <StyledButton 
+        <StyledButton
           style={{
             position: 'absolute',
             top: '5vh',
             right: '2vw',
-            borderRadius: '20px'
-          }} 
+            borderRadius: '20px',
+          }}
           onClick={toggleDarkMode}
         >
           {darkMode ? 'LIGHT MODE' : 'DARK MODE'}
         </StyledButton>
-        <StyledTitle 
-          style={{
-            position: 'absolute',
-            left: '18vw',
-            top: '5vh',
-            fontSize: 'clamp(1.5rem, 5vw, 3rem)'
-          }}
-        >
-          Welcome to my 8-bit World
-        </StyledTitle>
-        <StyledTitle 
-          style={{
-            position: 'absolute',
-            left: '10vw',
-            top: '15vh',
-            display:'flex',
-            justifyContent:'center',
-            fontSize: 'clamp(1.2rem, 4vw, 2.5rem)'
-          }}
-        >
-          Download this 8-bit browser from below
-        </StyledTitle>
-        <StyledButton 
-          style={{ 
-            borderRadius: '20px', 
-            marginTop: '2vh',
-            width: '20vw',
-            maxWidth: '200px'
-          }}
-          onClick={handleDownloadClick1}
-        >
-          Download
-        </StyledButton>
-        <StyledButton 
-          style={{ 
-            borderRadius: '20px', 
-            margin: 30, 
-            width: '20vw', 
-            maxWidth: '200px' 
-          }}
-          onClick={handleDownloadClick2}
-        >
-         Github
-        </StyledButton>
+        <StyledTitle>Welcome to my 8-bit World</StyledTitle>
+        <StyledTitle style={{
+          fontSize:20,
+          paddingLeft:80,
+          paddingRight:80,
+          color:'orange'
+        }}>hello , i'm Ayaan Adil and i made a 8-bit web browser supported by google.</StyledTitle>
+
+        {/* Image Wrapper to display images above buttons */}
+        <ImageWrapper>
+          <StyledImage src={image1} alt="Image 1" />
+          <StyledImage src={image2} alt="Image 2" />
+          <StyledImage src={image3} alt="Image 3" />
+        </ImageWrapper>
+        <StyledTitle style={{
+          fontSize:20,
+          paddingLeft:80,
+          paddingRight:80,
+          color:'red'
+        }}>Download this 8-bit browser from below, also checkout the github to modify this browser and make something of your own</StyledTitle> 
+        {/* Button Wrapper to center the buttons */}
+        <ButtonWrapper>
+          <StyledButton onClick={handleDownloadClick1}>
+            Download
+          </StyledButton>
+          <StyledButton onClick={handleDownloadClick2}>
+            Github
+          </StyledButton>
+        </ButtonWrapper>
+        <StyledTitle style={{
+          fontSize:20,
+          paddingLeft:80,
+          paddingRight:80,
+          paddingTop:30,
+          color:'blue'
+        }}>feel free to contact me via:</StyledTitle> 
+        <FooterLink href="https://www.linkedin.com/in/ayaan-adil-371137268" target="_blank" rel="noopener noreferrer" style={{
+          padding:5,
+          color:'orange'
+        }}>
+        LinkedIn
+      </FooterLink>
+      <FooterLink href="https://github.com/ayaanoski" target="_blank" rel="noopener noreferrer" style={{
+          padding:5,
+          color:'orange'
+        }}>
+        GitHub
+      </FooterLink>
+      <FooterLink href="mailto:ayaanadil@example.com" style={{
+          padding:5,
+          color:'orange'
+        }}>Email</FooterLink>
       </Wrapper>
     </ThemeProvider>
   );
