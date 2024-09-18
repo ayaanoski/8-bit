@@ -238,7 +238,7 @@ function App() {
         }}>
         GitHub
       </FooterLink>
-      <FooterLink href="mailto:ayaanadil@example.com" style={{
+      <FooterLink href="mailto:ayaanninja2403@gmail.com" style={{
           padding:5,
           color:'orange'
         }}>Email</FooterLink>
