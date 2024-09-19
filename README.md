@@ -1,5 +1,7 @@
-# deployed
-https://8-bit-browser.vercel.app
+# demo:
+## https://8-bit-browser.vercel.app
+
+
 ![image](https://github.com/user-attachments/assets/c26d04f8-305f-4f8b-b160-00e7ce594fb3)
 
 ![image](https://github.com/user-attachments/assets/b77de9a4-c12e-4974-8d00-cefac73d5c30)
