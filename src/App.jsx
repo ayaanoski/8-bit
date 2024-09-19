@@ -38,7 +38,8 @@ const GlobalStyle = createGlobalStyle`
     background-position: center;
     color: ${props => props.theme.textColor};
     transition: background-color 0.8s ease, background-image 0.8s ease;
-    overflow-y: scroll; /* To ensure scrollbar is always visible */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: scroll; /* Ensure scrollbar is always visible */
   }
 
   * {
@@ -68,7 +69,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,6 +77,8 @@ const Wrapper = styled.div`
   animation: ${fadeIn} 0.8s ease;
   padding: 20px;
   min-height: 100vh;
+  max-width: 100vw; /* Prevent content from exceeding viewport width */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 
   @media (max-width: 768px) {
     padding: 10px;
@@ -88,9 +90,7 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: -10px;
-  
-  top: 0;
+  padding: 0; /* Fix padding issue */
   background-color: transparent;
   z-index: 1000;
 
@@ -138,7 +138,7 @@ const StyledButton = styled.button`
   color: ${props => props.theme.buttonTextColor};
   border: none;
   border-radius: 20px;
-  cursor: hand;
+  cursor: pointer; /* Correct cursor property */
   width: clamp(150px, 20vw, 200px);
   transition: opacity 0.5s ease;
 
@@ -161,7 +161,8 @@ const ImageWrapper = styled.div`
 `;
 
 const StyledImage = styled.img`
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px; /* Ensure images don’t exceed this width */
   height: auto;
 
   @media (max-width: 768px) {
@@ -224,6 +225,7 @@ function App() {
   const handleDownloadClick1 = () => {
     window.location.href = 'https://drive.google.com/file/d/10JZF62R6DLJ0UfXuFdZldfuyKBy5yyZf/view?usp=sharing'; 
   };
+
   const handleDownloadClick2 = () => {
     window.location.href = 'https://github.com/ayaanoski/8-bit-browser'; 
   };
@@ -231,7 +233,9 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <Wrapper>
+      <Wrapper style={{
+        padding:35
+      }}>
         <NavBar>
           <Logo src={logo} alt="Logo" />
           <StyledTitle>Welcome to my 8-bit World</StyledTitle>
@@ -242,8 +246,9 @@ function App() {
             <StyledButton onClick={handleDownloadClick1} style={{ fontSize: 14 }}>
               Download
             </StyledButton>
-            <StyledButton onClick={handleDownloadClick2} style={{ fontSize: 14, padding:14 }}> github
-            <img src={github} alt="GitHub" style={{ width: '20px', height: '20px', paddingLeft:14 }} />
+            <StyledButton onClick={handleDownloadClick2} style={{ fontSize: 14, padding: 14 }}>
+              github
+              <img src={github} alt="GitHub" style={{ width: '20px', height: '20px', paddingLeft: 14 }} />
             </StyledButton>
           </ButtonWrapper>
         </NavBar>
@@ -306,17 +311,17 @@ function App() {
 
         {/* Footer section with contact links */}
         <Footer>
-          <FooterLink href="https://www.linkedin.com/in/ayaan-adil-371137268" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
-          <img src={linkedinLogo} alt="LinkedIn" style={{ width: '30px', height: '30px' }} />
+          <FooterLink href="https://www.linkedin.com/in/ayaan-adil/" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
+            <img src={linkedinLogo} alt="LinkedIn" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
-          <FooterLink href="https://www.instagram.com/_ayaaanadil?igsh=MXc2eW5hdzVrZnJybA==" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
-          <img src={instagramLogo} alt="Instagram" style={{ width: '30px', height: '30px' }} />
+          <FooterLink href="https://www.instagram.com/ayaan_adil/" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
+            <img src={instagramLogo} alt="Instagram" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
-          <FooterLink href="mailto:ayaanadil@example.com" style={{ color: 'orange' }}>
-          <img src={emailLogo} alt="Email" style={{ width: '30px', height: '30px' }} />
+          <FooterLink href="mailto:ayaanadil@protonmail.com" style={{ color: 'orange' }}>
+            <img src={emailLogo} alt="Email" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
           <FooterLink href="https://www.github.com/ayaanoski" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
-          <img src={github} alt="GitHub" style={{ width: '30px', height: '30px' }} />
+            <img src={github} alt="GitHub" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
         </Footer>
       </Wrapper>
