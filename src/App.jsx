@@ -234,7 +234,7 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Wrapper style={{
-        padding:35
+        padding:50
       }}>
         <NavBar>
           <Logo src={logo} alt="Logo" />
@@ -262,7 +262,7 @@ function App() {
           hello, i'm Ayaan Adil and I made an 8-bit (moreover pixelated) web browser supported by Google.
         </StyledTitle>
         <StyledTitle style={{
-          fontSize: 60,
+          fontSize: 50,
           paddingLeft: 80,
           paddingRight: 80,
           color: 'blue',
@@ -276,24 +276,24 @@ function App() {
         </ImageWrapper>
         <StyledTitle style={{
           fontSize: 30,
-          paddingLeft: 80,
-          paddingRight: 80,
+          paddingLeft: 30,
+          paddingRight: 30,
           color: 'violet'
         }}>
           Don't worry , it keeps getting updated on github 
         </StyledTitle>
         <StyledTitle style={{
           fontSize: 20,
-          paddingLeft: 80,
-          paddingRight: 80,
+          paddingLeft: 30,
+          paddingRight: 30,
           color: 'red'
         }}>
           Download this 8-bit browser for testing and start showing your creativity by adding features and modification. Click the github button for the repository.
         </StyledTitle>
         <StyledTitle style={{
           fontSize: 20,
-          paddingLeft: 80,
-          paddingRight: 80,
+          paddingLeft: 30,
+          paddingRight: 30,
           color: 'red'
         }}>
           (NOTE: IT MAY HAPPEN THAT YOU'VE DOWNLOADED THE OLD VERSION. TO OVERCOME THAT , GO TO MY GITHUB REPO , IT GIVES YOU A STEP BY STEP METHOND TO DEPLOY YOUR OWN BROWSER)
@@ -301,8 +301,8 @@ function App() {
         
         <StyledTitle style={{
           fontSize: 20,
-          paddingLeft: 80,
-          paddingRight: 80,
+          paddingLeft: 30,
+          paddingRight: 30,
           paddingTop: 30,
           color: 'blue',
         }}>
