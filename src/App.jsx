@@ -6,7 +6,7 @@ import image1 from './assets/1.png';
 import image2 from './assets/2.png';  
 import image3 from './assets/3.png';  
 import lightBackground from './assets/light1.jpg';
-import darkBackground from './assets/dark.png';  
+import darkBackground from './assets/dark2.jpg';  
 import linkedinLogo from './assets/linked.png';  // LinkedIn logo
 import instagramLogo from './assets/insta.png';  // Instagram logo
 import emailLogo from './assets/gmail.png';  // Email logo
