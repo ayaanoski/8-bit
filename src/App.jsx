@@ -254,17 +254,17 @@ function App() {
         </NavBar>
 
         <StyledTitle style={{
-          fontSize: 40,
-          paddingLeft: 80,
-          paddingRight: 80,
+          fontSize: 30,
+          paddingLeft: 50,
+          paddingRight: 50,
           color: 'orange',
         }}>
           hello, i'm Ayaan Adil and I made an 8-bit (moreover pixelated) web browser supported by Google.
         </StyledTitle>
         <StyledTitle style={{
           fontSize: 50,
-          paddingLeft: 80,
-          paddingRight: 80,
+          paddingLeft: 60,
+          paddingRight: 60,
           color: 'blue',
         }}>
           THE OR-BIT
@@ -286,7 +286,7 @@ function App() {
           fontSize: 20,
           paddingLeft: 30,
           paddingRight: 30,
-          color: 'red'
+          color: '#6CFF00'
         }}>
           Download this 8-bit browser for testing and start showing your creativity by adding features and modification. Click the github button for the repository.
         </StyledTitle>
