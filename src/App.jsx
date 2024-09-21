@@ -311,13 +311,13 @@ function App() {
 
         {/* Footer section with contact links */}
         <Footer>
-          <FooterLink href="https://www.linkedin.com/in/ayaan-adil/" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
+          <FooterLink href="https://www.linkedin.com/in/ayaan-adil-371137268" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
             <img src={linkedinLogo} alt="LinkedIn" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
-          <FooterLink href="https://www.instagram.com/ayaan_adil/" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
+          <FooterLink href="https://www.instagram.com/_ayaaanadil?igsh=MXc2eW5hdzVrZnJybA==" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
             <img src={instagramLogo} alt="Instagram" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
-          <FooterLink href="mailto:ayaanadil@protonmail.com" style={{ color: 'orange' }}>
+          <FooterLink href="mailto:ayaanninja2403@gmail.com" style={{ color: 'orange' }}>
             <img src={emailLogo} alt="Email" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
           <FooterLink href="https://www.github.com/ayaanoski" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
