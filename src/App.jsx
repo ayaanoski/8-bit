@@ -5,6 +5,7 @@ import logo from './assets/logo.png';
 import image1 from './assets/1.png';  
 import image2 from './assets/2.png';  
 import image3 from './assets/3.png';  
+import image4 from './assets/4.png'; 
 import lightBackground from './assets/light1.jpg';
 import darkBackground from './assets/dark2.jpg';  
 import linkedinLogo from './assets/linked.png';  // LinkedIn logo
@@ -273,6 +274,7 @@ function App() {
           <StyledImage src={image1} alt="Image 1" />
           <StyledImage src={image2} alt="Image 2" />
           <StyledImage src={image3} alt="Image 3" />
+          <StyledImage src={image4} alt="Image 4" />
         </ImageWrapper>
         <StyledTitle style={{
           fontSize: 30,
@@ -311,13 +313,13 @@ function App() {
 
         {/* Footer section with contact links */}
         <Footer>
-          <FooterLink href="https://www.linkedin.com/in/ayaan-adil-371137268" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
+          <FooterLink href="https://www.linkedin.com/in/ayaan-adil/" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
             <img src={linkedinLogo} alt="LinkedIn" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
-          <FooterLink href="https://www.instagram.com/_ayaaanadil?igsh=MXc2eW5hdzVrZnJybA==" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
+          <FooterLink href="https://www.instagram.com/ayaan_adil/" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
             <img src={instagramLogo} alt="Instagram" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
-          <FooterLink href="mailto:ayaanninja2403@gmail.com" style={{ color: 'orange' }}>
+          <FooterLink href="mailto:ayaanadil@protonmail.com" style={{ color: 'orange' }}>
             <img src={emailLogo} alt="Email" style={{ width: '30px', height: '30px' }} />
           </FooterLink>
           <FooterLink href="https://www.github.com/ayaanoski" target="_blank" rel="noopener noreferrer" style={{ color: 'orange' }}>
