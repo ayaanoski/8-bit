@@ -288,7 +288,7 @@ function App() {
           fontSize: 20,
           paddingLeft: 30,
           paddingRight: 30,
-          color: '#6CFF00'
+          color: 'orange'
         }}>
           Download this 8-bit browser for testing and start showing your creativity by adding features and modification. Click the github button for the repository.
         </StyledTitle>
