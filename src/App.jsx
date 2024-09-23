@@ -271,10 +271,21 @@ function App() {
           THE OR-BIT
         </StyledTitle>
         <ImageWrapper>
-          <StyledImage src={image1} alt="Image 1" />
-          <StyledImage src={image2} alt="Image 2" />
-          <StyledImage src={image3} alt="Image 3" />
-          <StyledImage src={image4} alt="Image 4" />
+          <StyledImage src={image1} alt="Image 1" style={{
+            borderRadius:10
+          }}/>
+          <StyledImage src={image2} alt="Image 2" style={{
+            borderRadius:10
+          }} />
+          <StyledImage src={image2} alt="Image 2" style={{
+            borderRadius:10
+          }} />
+          <StyledImage src={image3} alt="Image 3" style={{
+            borderRadius:10
+          }} />
+          <StyledImage src={image4} alt="Image 4" style={{
+            borderRadius:10
+          }}/>
         </ImageWrapper>
         <StyledTitle style={{
           fontSize: 30,
