@@ -274,9 +274,7 @@ function App() {
           <StyledImage src={image1} alt="Image 1" style={{
             borderRadius:10
           }}/>
-          <StyledImage src={image2} alt="Image 2" style={{
-            borderRadius:10
-          }} />
+         
           <StyledImage src={image2} alt="Image 2" style={{
             borderRadius:10
           }} />
