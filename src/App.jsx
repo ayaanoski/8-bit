@@ -224,7 +224,7 @@ function App() {
   };
 
   const handleDownloadClick1 = () => {
-    window.location.href = 'https://drive.google.com/file/d/10JZF62R6DLJ0UfXuFdZldfuyKBy5yyZf/view?usp=sharing'; 
+    window.location.href = 'https://drive.google.com/drive/folders/14xJNFg7a106BFimaO_pKMhiQPlk2A2Zc?usp=sharing'; 
   };
 
   const handleDownloadClick2 = () => {
